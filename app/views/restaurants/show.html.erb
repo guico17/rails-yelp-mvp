@@ -4,3 +4,9 @@
 <p><%= @restaurant.category %></p>
 
 <%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%=review.content%> - <%=review.rating%></li>
+  <% end %>
+</ul>
